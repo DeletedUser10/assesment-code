@@ -8,8 +8,6 @@ root.title('code')
 def quit():
     root.destroy()
 
-def print_details():
-    return
 
 
 def frame_1():
@@ -42,6 +40,14 @@ def frame_1():
     i_label = Label(framel, text = "Item hired").grid(row = 4, column= 0)
     n_label = Label(framel, text= "Number hired").grid(row = 4, column= 6)
 
+#Second frame created where the list will be printed to
+def frame_2():
+    global framel2
+    framel2 = Frame(root, highlightbackground= 'grey', highlightthickness= 1, bg = 'white')
+    framel2.grid(row= 2, column= 1, padx = 20, pady = 20, ipadx = 325, ipady= 100, sticky=N)
+
+
+
 def quit_button():
     quit_b = Button(root, text = "quit" , command = quit, padx = 30)
     quit_b.grid(column=1, row= 0, sticky= W ) 
@@ -52,6 +58,7 @@ def quit_button():
 def main():
     quit_button()
     frame_1()
+    frame_2()
     root.mainloop()
 
 
