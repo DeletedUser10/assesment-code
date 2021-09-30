@@ -186,17 +186,23 @@ def delete_error():
     #varriable that checks errors
     check = 0
     #if nothing is entered into delete entry
-    if len(e_del.get()) == 0:
+    try:
+        if len(e_del.get()) == 0:
         #message box will appear
-        messagebox.showerror("Delete Row", "please enter a row number")
+            messagebox.showerror("Delete Row", "please enter a row number")
         #error check will equal 1
-        check = 1
+            check = 1
     #if a row number that doesn't exist get's entered 
-    if int(e_del.get()) > total_entries:
-        #message box will appear
-        messagebox.showerror("Delete Row", "That row does not exist")
+        if int(e_del.get()) > total_entries:
+            #message box will appear
+            messagebox.showerror("Delete Row", "That row does not exist")
+            #error check will equal 1
+            check = 1
+    except:
+        messagebox.showerror("Delete Row", "Only integers must be entered in this entry")
         #error check will equal 1
         check = 1
+
 
     #if error varriable remains 0
     if check == 0:
