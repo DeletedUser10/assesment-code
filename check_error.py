@@ -193,7 +193,7 @@ def delete_error():
         #error check will equal 1
             check = 1
     #if a row number that doesn't exist get's entered 
-        if int(e_del.get()) > total_entries:
+        if int(e_del.get()) >= total_entries:
             #message box will appear
             messagebox.showerror("Delete Row", "That row does not exist")
             #error check will equal 1
